@@ -209,49 +209,7 @@ I listed the storage accounts in `rg-project4`, found the actual deployed name, 
 
 This was a useful reminder to verify the actual deployed resource names when troubleshooting Azure CLI commands.
 
-## Screenshots
 
-### Resource Group Overview
-
-I verified that the resources for the project were deployed in `rg-project4`.
-
-![Resource group overview](screenshots/01-resource-group-overview.png)
-
-### Virtual Network and Subnets
-
-I created two subnets inside `vnet-project4` and associated the web subnet with the NSG.
-
-![VNet and subnets](screenshots/02-vnet-subnets.png)
-
-### Network Security Group
-
-I configured inbound rules for HTTP on TCP port 80 and SSH on TCP port 22.
-
-![NSG inbound rules](screenshots/03-nsg-inbound-rules.png)
-
-### Linux Virtual Machine
-
-I deployed an Ubuntu Linux VM and connected it to `web-subnet`.
-
-![Linux VM overview](screenshots/04-linux-vm-overview.png)
-
-### SSH Verification
-
-I connected to the VM through SSH and verified its hostname and private IP address.
-
-![SSH verification](screenshots/05-ssh-verification.png)
-
-### Storage Account
-
-I verified the storage account type, replication, HTTPS requirement, minimum TLS version, and public blob access setting.
-
-![Storage account](screenshots/06-storage-account.png)
-
-### Bicep What-If
-
-I used `what-if` to preview a test change from NSG priority `100` to `105` before deployment.
-
-![Bicep what-if](screenshots/07-bicep-what-if.png)
 
 ## What I Learned
 
@@ -271,4 +229,8 @@ Using Azure CLI alongside Bicep helped me understand the difference between:
 - Verifying the deployed resources
 - Troubleshooting deployment problems
 
-I do not expect to memorize every Bicep property or API version. My main takeaway from this project is that I can now read and understand the structure of a Bicep template, make changes to it, use documentation and tools when I need help with syntax, deploy it to Azure, and troubleshoot problems when the deployment does not work as expected.
+I do not expect to remember every Bicep property or API version. The most important thing I learned is how to read and understand a Bicep template, make changes to it, use documentation when I need help, deploy it to Azure, and fix problems if something goes wrong.
+
+## Personal Reflection
+
+When I first learned about Infrastructure as Code, I wasn't sure if I liked it. I thought writing code to create resources would take away some of the creativity. After learning Bicep and building this project, I changed my mind. I realized that writing the templates actually helped me understand Azure better. Before I could write the template, I had to understand what each resource does, how it connects to other resources, and what it needs to work correctly. This project showed me that Infrastructure as Code is not just about saving time. It also helps you learn how cloud infrastructure works.
